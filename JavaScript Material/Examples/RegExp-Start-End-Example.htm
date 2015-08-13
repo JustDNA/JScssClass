@@ -1,0 +1,24 @@
+<script language="JavaScript">
+function checkString(){
+var pattern1 = /^hello$/i;    //regular expression defining a word to search for in any case
+
+
+var regExp1 = new RegExp(pattern1);
+
+var myStr = document.myform.myinput.value;
+
+var strResults = regExp1.test(myStr);
+
+if (strResults)
+   alert("The word entered in the text field meets the criterion!");
+else
+   alert("The word entered does not match the criterion!");
+
+}
+</script>
+
+<form name="myform">
+<input type="text" name="myinput" size=25 value="Hello">
+<input type="button" onClick="checkString()" value="check">
+
+</form>

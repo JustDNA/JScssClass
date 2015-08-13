@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>Sorting</title>
+	<script type="text/javascript">
+		function numberAs(a,b) {
+			  return b-a;
+		}
+		function arrange (t, b) {
+			var temp = t.slice();
+			if(b=="ascending"){
+				temp = temp.sort();
+				return temp;
+			}else 	if(b=="descending"){
+				temp = temp.sort(numberAs);
+				return temp;
+			}
+		}
+		var a = [1,5,2,3,5];
+		a = arrange(a, "ascending");
+		alert(a);
+	</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Navigator Object</title>
+<script language="javascript">
+
+
+function browserName()
+{
+    alert(navigator.appName);
+}
+function browserVersion()
+{
+    alert(navigator.appVersion);
+}
+function getuserAgent()
+{
+    alert(navigator.userAgent);
+}
+function browserLang()
+{
+    alert(navigator.browserLanguage);
+}
+function cookieState()
+{
+    alert(navigator.cookieEnabled);
+}
+
+</script>
+</head>
+
+<body>
+<h2>Examine characteristics of the Navigator Object</h2>
+<form>
+<p name="para"><input type="button" value="Get Browser Name" onclick="browserName()"></p>
+<p name="para"><input type="button" value="Get Browser Version" onclick="browserVersion()"></p>
+<p name="para"><input type="button" value="Get UserAgent" onclick="getuserAgent()"></p>
+<p name="para"><input type="button" value="Get Browser Language" onclick="browserLang()"></p>
+<p name="para"><input type="button" value="Cookie Enabled?" onclick="cookieState()"></p>
+</form>
+</body>
+
+</html>
+

@@ -1,0 +1,16 @@
+<script language="JavaScript">
+function checkpostal()
+{
+  var re5digit=/\d\d\d\d\d/ //regular expression defining a 5 digit number
+  if (document.myform.myinput.value.search(re5digit)==-1) //if match failed 
+    alert("Please enter a valid 5 digit number inside form")
+  else
+    alert("You've entered a five digit number")
+}
+</script>
+
+<form name="myform">
+<input type="text" name="myinput" size=15>
+<input type="button" onClick="checkpostal()" value="check">
+
+</form>

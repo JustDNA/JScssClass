@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>
+Prototype Demo
+</title>
+<script language="JavaScript">
+	function myclass() {
+	  	this.propertytwo = 2;
+	  	this.propertythree = 3;
+	}
+	var myinstance = new myclass();
+	try
+	{
+		alert(myinstance.propertyone);
+	}
+	catch(e)
+	{
+		alert(e.message())
+	}
+	myclass.prototype.propertyone = 1;
+	myinstance.propertytwo = 5;
+	
+	alert(myinstance.propertyone);
+	alert(myinstance.propertytwo);
+</script>
+</head>
+<body>
+<h2>Prototype Example</h2>
+</body>
+</html>

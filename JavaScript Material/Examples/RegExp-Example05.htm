@@ -1,0 +1,13 @@
+<script language="JavaScript">
+function checkEmail(){
+var re5digit=/^[a-zA-Z]+[@][a-zA-Z]+([.][a-zA-Z]{2,3})+$/ //regular expression defining a email ID
+if (document.myform.myinput.value.search(re5digit)==-1) //if match failed
+alert("Please enter a valid email ID inside form")
+}
+</script>
+
+<form name="myform">
+<input type="text" name="myinput" size=15>
+<input type="button" onClick="checkEmail()" value="check">
+
+</form>

@@ -1,0 +1,27 @@
+<script language="JavaScript">
+function checkString(){
+var pattern1 = /[abcde123]/gi;    //regular expression defining a word to search for in any case and all occurrences
+
+
+var regExp1 = new RegExp(pattern1);
+
+var myStr = document.myform.myinput.value;
+
+var strResults = myStr.match(regExp1);
+var resValue = "";
+
+for(i=0;i<strResults.length;i++)
+{
+   resValue += strResults[i] + ",";
+}
+
+document.myform.myinput.value = "The results are " + resValue;
+
+}
+</script>
+
+<form name="myform">
+<input type="text" name="myinput" size=25 value="Hello World">
+<input type="button" onClick="checkString()" value="check">
+
+</form>

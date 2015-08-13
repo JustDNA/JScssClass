@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>Conversion</title>
+	<script type="text/javascript">
+		function toCentigrade () {
+			val = parseInt(document.myForm1.myInput1.value);
+			if(isNaN(val)){
+				alert("Invalid entry");
+				return;
+			}
+			alert((val - 32.0)*(5.0/9.0));
+		}
+		function toKM () {
+			val = parseInt(document.myForm2.myInput2.value);
+			if(isNaN(val)){
+				alert("Invalid entry");
+				return;
+			}
+			alert(val*1.6);
+		}
+		function toLBS () {
+			val = parseInt(document.myForm3.myInput3.value);
+			if(isNaN(val)){
+				alert("Invalid entry");
+				return;
+			}
+			alert(val*2.2);
+		}
+		function toRad () {
+			val = parseInt(document.myForm4.myInput4.value);
+			if(isNaN(val)){
+				alert("Invalid entry");
+				return;
+			}
+			alert(val*Math.PI/180);
+		}
+	</script>
+</head>
+<body>
+	<form name="myForm1">
+		<input type="text" name="myInput1" size=25>
+		<input type="button" onClick="toCentigrade()" value="Convert to Centigrade">
+	</form>
+	<form name="myForm2">
+		<input type="text" name="myInput2" size=25>
+		<input type="button" onClick="toKM()" value="Convert to KM">
+	</form>
+	<form name="myForm3">
+		<input type="text" name="myInput3" size=25>
+		<input type="button" onClick="toLBS()" value="Convert to LBS">
+	</form>
+	<form name="myForm4">
+		<input type="text" name="myInput4" size=25>
+		<input type="button" onClick="toRad()" value="Convert to Radians">
+	</form>
+</body>
+</html>

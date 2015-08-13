@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>prime</title>
+	<script type="text/javascript">
+		function isprime (i) {
+			divisor = Math.ceil(i/2);
+			while(divisor > 1){
+				if(i%divisor == 0){
+					return false;
+				}
+				divisor--;
+			}
+			return true;
+		}
+		function primes (t, b) {
+			var temp = new Array();
+			for (var i = 0; i < t.length; i++) {
+				if(isprime(t[i])){
+					temp.push(t[i]);
+				}
+			};
+			return temp;
+		}
+		var a = [1,5,2,3,5,12,0,32,123,1111,171,2281];
+		a = primes(a);
+		alert(a);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

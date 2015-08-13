@@ -1,0 +1,24 @@
+<script language="JavaScript">
+function checkString(){
+var pattern = /cat/;    //regular expression defining a word to search for
+var regExp = new RegExp(pattern);
+
+var results = regExp.exec(document.myform.myinput.value);   //returns the first occurrence of the  search term
+if (results != null)
+{
+alert(results.length);
+alert(results[0]);
+}
+else
+{
+   alert("The string " + "'" + pattern + "'" + " has not been found!");
+}
+
+}
+</script>
+
+<form name="myform">
+<input type="text" name="myinput" size=25>
+<input type="button" onClick="checkString()" value="check">
+
+</form>

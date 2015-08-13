@@ -1,0 +1,24 @@
+<script language="JavaScript">
+function checkString(){
+var pattern1 = /he/gi;    //regular expression defining a word to search for in any case and all occurrences
+
+
+var regExp1 = new RegExp(pattern1);
+
+var myStr = document.myform.myinput.value;
+
+var arrResults = myStr.split(regExp1);
+
+for(i=0;i<arrResults.length;i++)
+{
+     alert("The result is " + arrResults[i]);
+}
+
+}
+</script>
+
+<form name="myform">
+<input type="text" name="myinput" size=25>
+<input type="button" onClick="checkString()" value="check">
+
+</form>

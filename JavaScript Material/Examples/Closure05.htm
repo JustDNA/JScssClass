@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>Closure Example</title>
+<script>
+function greeting() {
+  var msg = "Hello World";
+  var alertMsg = function() { alert(msg); }
+  return alertMsg;
+}
+greeting()();
+
+</script>
+</head>
+<body>
+<h2>Closure example</h2>
+</body>
+</html>

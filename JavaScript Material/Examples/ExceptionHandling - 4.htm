@@ -1,0 +1,50 @@
+<HTML>
+	<HEAD>
+		<TITLE>Exception Handling Example 4</TITLE>
+		<Script language="JavaScript">
+		// handling the error using the "try-catch" block
+		// catch the error based on the ErrorType
+		// providing the error information
+			function changeColours()
+			{
+					try
+					{
+						alerrt("The new colours");
+					}
+					catch (e)
+					{
+						if (e instanceof TypeError)
+						{
+							alert("Type Error encountered. The description is " + e.message);
+						}
+						else if (e instanceof SyntaxError)
+						{
+							alert("Syntax Error encountered. The description is " + e.message);
+						}
+						else
+						{
+							alert("Error encountered. The description is " + e.message);
+						}
+					}			
+			}
+		</Script>
+	</HEAD>
+	<BODY>
+		<P>
+			<FONT size="5">Exception Handling Example 4</FONT>
+		</P>
+		<P>&nbsp;
+		</P>
+		<div id="div1" style="LEFT: 10px; WIDTH: 100px; POSITION: relative; TOP: 10px; HEIGHT: 100px; BACKGROUND-COLOR: yellow">
+			This is the first DIV block!
+		</div>
+		<div id="div2" style="LEFT: 10px; WIDTH: 100px; POSITION: relative; TOP: 25px; HEIGHT: 100px; BACKGROUND-COLOR: aqua">
+			This is the second DIV block!
+		</div>
+		<br><br>
+		<form>
+			<input type="button" name="btn1" value="Change Colours" onClick="changeColours()"><br>
+		</form>
+
+	</BODY>
+</HTML>

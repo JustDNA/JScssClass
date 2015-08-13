@@ -1,0 +1,24 @@
+<script language="JavaScript">
+function checkString(){
+var pattern1 = /cat/gi;    //regular expression defining a word to search for in any case and all occurrences
+
+
+var regExp1 = new RegExp(pattern1);
+var results1;
+
+while((results1 = regExp1.exec(document.myform.myinput.value)) != null)      //returns the occurrences of the  search term
+{
+  var msg = "Found " + results1[0] + ".  ";
+  msg += "Next match starts at " + regExp1.lastIndex;
+  alert(msg);
+}
+
+
+}
+</script>
+
+<form name="myform">
+<input type="text" name="myinput" size=25>
+<input type="button" onClick="checkString()" value="check">
+
+</form>

@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>CreateObject Example</title>
+<Script language="JavaScript">
+var manager, executive;
+
+function makeObject()
+{
+	// Create the first object
+	manager = new Object();
+	manager.empid = "E101";
+	manager.empname = "Lakshman";
+	manager.dept = "Tech";
+	
+	// Create the second object
+	executive = new Object();
+	executive.empid = "E110";
+	executive.empname = "James";
+	executive.dept = "Pre-Sales";
+
+	alert("2 objects created");
+}
+
+function getData()
+{
+	alert("The manager's name is " + manager.empname);
+	alert("The executive's name is " + executive.empname);
+}
+</Script>
+</head>
+<body>
+<h2>Creating Objects directly</h2>
+<form>
+<p><input type="button" value="CreateObjects" onclick="makeObject()"></p>
+<p><input type="button" value="GetNames" onclick="getData()"></p>
+
+</form>
+</body>
+</html>

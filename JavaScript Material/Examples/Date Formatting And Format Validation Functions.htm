@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Date Formatting And Format Validation Functions</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<SCRIPT language=JavaScript src="date.js"></SCRIPT>
+
+<META content="Microsoft FrontPage 5.0" name=GENERATOR></HEAD>
+<BODY vLink=#00615f aLink=#00615f link=#00615f bgColor=#ffffff>
+<TABLE width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left width="100%"><U><B>Description:</B></U> 
+      <BR>These functions are very useful when dealing with any type of date 
+      fields. 
+      <P>They use the same format strings as the java.text.SimpleDateFormat 
+      class, with a few minor exceptions. 
+      <P>Functions include: 
+      <UL>
+        <LI>isDate() - Check if a date is valid 
+        <LI>compareDates() - See if one date is greater than another 
+        <LI>formatDate() - Output a Date() object in any format 
+        <LI>getDateFromFormat() - Parse a date string and return time in ms 
+        representing date object </LI></UL><BR><U><B>Example:</B></U> <BR>(Note 
+      the difference between M (month) and m (minute)!!!) <BR>
+      <FORM>
+      <TABLE border=0>
+        <TBODY>
+        <TR>
+          <TD>&nbsp;</TD>
+          <TD><B>Date String</B></TD>
+          <TD><B>Date Format</B></TD>
+          <TD>&nbsp;</TD></TR>
+        <TR>
+          <TD><B>1</B>: </TD>
+          <TD><INPUT value="January 1, 1900" name=string1 size="20"></TD>
+          <TD><INPUT value="MMM d, y" name=format1 size="20"></TD>
+          <TD><INPUT onclick=alert(isDate(this.form.string1.value,this.form.format1.value)) type=button value=isDate()></TD></TR>
+        <TR>
+          <TD><B>2</B>: </TD>
+          <TD><INPUT value="December 31, 2000" name=string2 size="20"></TD>
+          <TD><INPUT value="MMM d, y" name=format2 size="20"></TD>
+          <TD><INPUT onclick=alert(isDate(this.form.string2.value,this.form.format2.value)) type=button value=isDate()></TD></TR>
+        <TR>
+          <TD></TD>
+          <TD><INPUT onclick="alert('1 = Date1 is greater\n0 = Date1 is not greater\n-1 = Date format error');alert(compareDates(this.form.string1.value,this.form.format1.value,this.form.string2.value,this.form.format2.value))" type=button value=compareDates(1,2)></TD>
+          <TD></TD>
+          <TD></TD></TR></TBODY></TABLE>
+      <TABLE border=0>
+        <TBODY>
+        <TR>
+          <TD><B>Date Format</B></TD>
+          <TD></TD>
+          <TD><B>Output Current Date</B></TD></TR>
+        <TR>
+          <TD><INPUT value="MMM d, y" name=format3 size="20"></TD>
+          <TD><INPUT onclick="this.form.output3.value=formatDate(new Date(),this.form.format3.value)" type=button value=formatDate()></TD>
+          <TD><INPUT size=30 name=output3></TD></TR></TBODY></TABLE>
+      <TABLE border=0>
+        <TBODY>
+        <TR>
+          <TD><B>Date String</B></TD>
+          <TD><B>Date Format</B></TD>
+          <TD><B>Convert To Format</B></TD>
+          <TD><B>Output</B></TD></TR>
+        <TR>
+          <TD><INPUT size=15 value="January 1, 2001" name=string4></TD>
+          <TD><INPUT size=15 value="MMM d, y" name=format4></TD>
+          <TD><INPUT size=15 value=MM/dd/y name=newformat4></TD>
+          <TD><INPUT size=15 name=output4></TD></TR>
+        <TR>
+          <TD align=middle colSpan=4><INPUT onclick="this.form.output4.value=formatDate(new Date(getDateFromFormat(this.form.string4.value,this.form.format4.value)),this.form.newformat4.value)" type=button value=Convert></TD></TR></TBODY></TABLE>
+      <TABLE border=0>
+        <TBODY>
+        <TR>
+          <TD><B>Free-Form Date Field</B></TD>
+          <TD></TD>
+          <TD><B>Parsed Date</B></TD></TR>
+        <TR>
+          <TD><INPUT name=date5 size="20"></TD>
+          <TD><INPUT onclick="var d=parseDate(this.form.date5.value);if(d==null){alert('Date string doesn\'t match any recognized formats!');} else{this.form.output5.value=formatDate(d,'MMM dd, yyyy');}" type=button value=parseDate()></TD>
+          <TD><INPUT size=30 name=output5></TD></TR></TBODY></TABLE>
+      <TABLE bgColor=#f0f0f0 border=0>
+        <TBODY>
+        <TR>
+          <TD><PRE>The format string consists of the following abbreviations:
+
+Field        | Full Form          | Short Form
+-------------|--------------------|-----------------------
+Year         | yyyy (4 digits)    | yy (2 digits), y (2 or 4 digits)
+Month        | MMM (name or abbr.)| MM (2 digits), M (1 or 2 digits)
+             | NNN (abbr.)        |
+Day of Month | dd (2 digits)      | d (1 or 2 digits)
+Day of Week  | EE (name)          | E (abbr)
+Hour (1-12)  | hh (2 digits)      | h (1 or 2 digits)
+Hour (0-23)  | HH (2 digits)      | H (1 or 2 digits)
+Hour (0-11)  | KK (2 digits)      | K (1 or 2 digits)
+Hour (1-24)  | kk (2 digits)      | k (1 or 2 digits)
+Minute       | mm (2 digits)      | m (1 or 2 digits)
+Second       | ss (2 digits)      | s (1 or 2 digits)
+AM/PM        | a                  |
+
+NOTE THE DIFFERENCE BETWEEN MM and mm! Month=MM, not mm!
+
+Examples:
+ "MMM d, y" matches: January 01, 2000
+                     Dec 1, 1900
+                     Nov 20, 00
+ "M/d/yy"   matches: 01/20/00
+                     9/2/00
+ "MMM dd, yyyy hh:mm:ssa" matches: "January 01, 2000 12:30:45AM"</PRE></TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top>
+      <SCRIPT type=text/javascript>
+google_ad_client = "pub-9155030588311591";
+google_ad_width = 120;
+google_ad_height = 600;
+google_ad_format = "120x600_as";
+google_color_border = "006666";
+google_color_bg = "FFFFFF";
+google_color_link = "006666";
+google_color_url = "006666";
+google_color_text = "000000";
+      </SCRIPT>
+    
+    </TD></TR></TBODY></TABLE>
+    </FORM>
+    </BODY>
+   </HTML>

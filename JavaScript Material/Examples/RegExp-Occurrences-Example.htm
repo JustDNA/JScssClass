@@ -1,0 +1,24 @@
+<script language="JavaScript">
+function checkString(){
+var pattern1 = /^[a-zA-Z]+@gmail.com$/i;    //regular expression defining a word to search for in any case
+
+
+var regExp1 = new RegExp(pattern1);
+
+var myStr = document.myform.myinput.value;
+
+var strResults = regExp1.test(myStr);
+
+if (strResults)
+   alert("The email entered in the text field meets the criterion!");
+else
+   alert("The email entered does not match the criterion!");
+
+}
+</script>
+
+<form name="myform">
+Email : <input type="text" name="myinput" size=25 value="@gmail.com">
+<input type="button" onClick="checkString()" value="check">
+
+</form>

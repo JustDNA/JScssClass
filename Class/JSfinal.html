@@ -1,0 +1,107 @@
+<html>
+<head>
+	<title>
+		Data entry
+	</title>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="JSfinalScript.js">
+	</script>
+</head>
+<body>
+	<div class="page-header">
+	  <center><h1>BILLING SECTION</h1></center>
+	</div>
+
+	<div id="login">
+		 <div class="container" style="width:30%;vertical-align:middle;">
+
+	      <form name="LoginForm" class="form-signin">
+	        <center><h2 class="form-signin-heading">Please Sign In</h2></center>
+	        <br>
+	        <label for="inputUser" class="sr-only">User ID</label>
+	        <input name="uid" type="text" id="inputUser" class="form-control" placeholder="User ID" required autofocus>
+	        <br>
+	        <label for="inputPassword" class="sr-only">Password</label>
+	        <input name="pass" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+	        <div class="checkbox">
+	        </div>
+	        <input type="buton" onclick="validate()" class="btn btn-lg btn-primary btn-block" value="Sign in"></input>
+	      </form>
+
+	    </div> 
+	</div>
+
+	<div id="data" style="display:none">
+		<!-- <div id="data"> -->
+		<div class="container">
+	    <div class="row clearfix">
+			<div class="col-md-12 column" id="printArea">
+				<table class="table table-bordered table-hover" id="table">
+					<colgroup>
+					    <col width="5%" />
+					    <col width="20%" />
+					    <col width="40%" />
+					    <col width="10%" />
+				        <col width="10%" />
+					    <col width="15%" />
+				    </colgroup>
+					<thead>
+						<tr >
+							<th class="text-center">#
+							</th><th class="text-center">Product Code
+							</th><th class="text-center">Product Name
+							</th><th class="text-center">Cost/Unit
+							</th><th class="text-center">Qty
+							</th><th class="text-center">Cost
+							</th>
+						</tr>
+					</thead>
+					<tbody class="text-center">
+						<tr id='row1'>
+							<td>
+							1
+							</td>
+							<td>
+							<input id='pid1' type="text" onblur="fillName(1)" placeholder='Prodct ID' class="form-control"/>
+							</td>
+							<td>
+							<label id='pn1' type="text" class=""/>
+							</td>
+							<td>
+							<label id='cu1' type="text" class=""/>
+							</td>
+							<td>
+							<input id='qty1' type="text" onblur="fillCost(1)" placeholder='Qty' class="form-control"/>
+							</td>
+							<td>
+							<label id='c1' type="text" class=""/>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="pull-right">
+				<label>tax:</label>
+				<label id="tax">0 Rs</label>
+				<hr>
+				<label>Grand Total:</label>
+				<label id="total">0 Rs</label>
+				<hr>
+				</div>
+			</div>
+		</div>
+		<button onclick="addRow()" class="btn btn-default pull-left">Add Row</button>
+		<button onclick="deleteRow()" class="pull-right btn btn-danger">Delete Last Row</button>
+		<br><br><br>
+		<button onclick="printBill()" class="pull-right btn btn-success">Print Bill</button>
+	</div>
+	</div>
+
+</body>
+</html>

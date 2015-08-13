@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+    <script language="javascript">
+        function stringDemo() {
+            var myStr = new String("Hello World");
+            alert("The character at the first index position of 'Hello World' is " + myStr.charAt(0));
+            alert("The position of 'Hell' in the string 'Hello World' is " + myStr.indexOf("Hell"));
+            alert("The length of 'Hello World' is " + myStr.length);
+            alert("The character code of the first character in 'Hello World' is " + myStr.charCodeAt(1));
+            alert("The substring of the first 4 characters in 'Hello World' is " + myStr.substr(0,3));
+            alert("The string 'HELLO WORLD' in lowercase is  " + myStr.toLowerCase());
+            alert("The string 'hello world' in uppercase is " + myStr.toUpperCase());
+            myStr = "First,Second,Third,Fourth"
+            var myArr = myStr.split(",");
+            for(i=0;i<myArr.length;i++)
+            {
+               alert(myArr[i]);
+            }
+        }
+        stringDemo();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Closure Example</title>
+<script>
+	function emit420() {
+		    var num = 419;
+		    var emitVal = function() { alert(num);}
+		    num++;
+		    return emitVal;
+		}
+	var getNum = emit420();
+	getNum();
+	getNum();
+</script>
+</head>
+<body>
+	<h2>Closure example</h2>
+</body>
+</html>

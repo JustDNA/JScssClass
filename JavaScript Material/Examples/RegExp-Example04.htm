@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE>Replacement Example</TITLE>
+<Script type="text/javascript">
+function changecontent()
+{
+    var inputStr = document.forms[0].elements[0].value;
+    var regexp = /towers/gi;
+    var outputStr = inputStr.replace(regexp,"site");
+    document.forms[0].elements[0].value = outputStr;
+}
+</Script>
+</HEAD>
+<BODY>
+<h2>This example uses regular expressions to replace the specified content</h2>
+<form>
+<TextArea rows="15" cols="60">
+Cell phone towersabc form an important component of the mobile phone infrastructure network. Acting like an antenna, the cell phone 
+tower picks up the call from the cell phone and transmits it to the receiver. These days, their presence everywhere indicates that so long as the demand for 
+wireless service continues, the need for cell phone towers will also continue. With the proliferation of cell phones, the towers are playing a crucial role in 
+carrying signals from one phone to another and companies are setting up state-of-the-art infrastructure to provide quality service to the consumers, 
+even in sparsely populated remote areas.
+But all this could change in the future, for balloons are soon to be tested as replacements for costly cell phone towers! 
+Balloons for cellular coverage… sounds weird? Balloons will carry wireless network repeaters high above in the skies to fill the gaps in cellular coverage 
+in thinly populated areas.
+Former governor of North Dakota, US, and head of Extend America Inc., Ed Schafer, says the idea works perfectly in the lab. 
+Extend America and Chandler, Arizona-based Space Data Corporation, are developing the technology, which is said to be the first to use disposable 
+balloons to provide cellular coverage that requires a tiny fraction of the cost of building cellular towers.  Three balloons would cover the entire state of 
+North Dakota as compared to 1,100 cell phone towers necessary to provide this service. If the trials are successful, then hydrogen-filled balloons would be 
+launched into the stratosphere above North Dakota. 
+The balloon technology called ‘SkySite’ is already in use in places such as Texas, Oklahoma, Louisiana, Arkansas and New Mexico in 
+applications including tracking oil company vehicles and monitoring the production of oil wells and pipelines. Jerry Knoblach, CEO, Space Data, says 
+that the balloons would work in North Dakota even in cold or stormy weather. Up to 20 miles above the earth, above the path of commercial airliners, 
+stratospheric winds would push the balloons across the state at about 30 mph. Each balloon would deliver voice and data service in an area hundreds of miles 
+in diameter. Nine balloons would always be in the air. After gaining altitude, the balloons would swell from six feet in diameter to 30 feet. Once a balloon 
+leaves the state, its communications pod would jettison, deploy a parachute and fall to earth, where it would signal its position. This would be sent again 
+after a new battery pack is put. After the electronic equipment is released, the balloons rise and expand with the drop in air pressure until they 
+burst.
+</TextArea>
+<p>&nbsp;</p>
+<input type="button" name="btn" id="btn" value="Click to change 'towers' to 'site'" onclick="changecontent()">
+</form>
+<P>&nbsp;</P>
+
+</BODY>
+</HTML>

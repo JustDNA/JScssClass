@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+
+<script type="text/javascript" language="javascript">
+
+    var http_request = false;
+
+    function getInfo() {
+
+        http_request = false;
+
+        if (window.XMLHttpRequest) { // Mozilla, Safari,...
+            http_request = new XMLHttpRequest();
+            if (http_request.overrideMimeType) {
+                http_request.overrideMimeType('text/xml');
+            }
+        } else if (window.ActiveXObject) { // IE
+            try {
+                http_request = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    http_request = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (e) {}
+            }
+        }
+
+        if (!http_request) {
+            alert('Giving up :( Cannot create an XMLHTTP instance');
+            return false;
+        }
+        http_request.onreadystatechange = alertContents;
+        http_request.open('GET',"http://localhost/ajax/CustomerInfo.asp?custid=" + document.forms[0].elements[0].value, true);
+        http_request.send(null);
+
+    }
+
+    function alertContents() {
+
+        if (http_request.readyState == 4) {
+            if (http_request.status == 200) {
+                
+                var custXML = http_request.responseXML;
+                var strcustName = custXML.getElementsByTagName("CustomerName");
+                var strcustAdd = custXML.getElementsByTagName("CustomerAddress");
+                var strcustPhone = custXML.getElementsByTagName("CustomerPhone");
+                document.getElementById("custName").value = strcustName[0].firstChild.text;
+                document.getElementById("custAdd").value = strcustAdd[0].firstChild.text;
+                document.getElementById("phone").value = strcustPhone[0].firstChild.text;
+                
+                
+            } else {
+                alert('There was a problem with the request.');
+            }
+        }
+
+    }
+</script>
+
+
+</HEAD>
+<BODY>
+<form>
+<P>CustomerID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <INPUT type="text" name="custID" id="custID" size="5" onBlur="getInfo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+CustomerName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<INPUT type="text" name="custName" id="custName" size="15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Phone&nbsp;&nbsp;&nbsp; <INPUT type="text" name="phone" id="phone" size="10"></P>
+<P>Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp; <TEXTAREA name="custAdd" id="custAdd" rows="3" cols="12">
+</TEXTAREA></P>
+</form>
+</BODY>
+</HTML>

@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>
+Prototype Demo
+</title>
+<script language="JavaScript">
+
+	function Vehicle(hasEngine, hasWheels) {
+		this.hasEngine = hasEngine || false;
+		this.hasWheels = hasWheels || false;
+	}
+
+	function Car(make, model, hp) {
+		this.hp = hp;
+		this.make = make;
+		this.model = model;
+	}
+
+	function dispSpecs() {
+		alert(this.make + ", " + this.model + ", " + this.hp + ", " + this.hasEngine + ", " + this.hasWheels);
+	}
+
+	function proto() {
+		Car.prototype = new Vehicle(true, true);
+		Car.prototype.showSpecs = dispSpecs;
+		var myPhantom = new Car("Rolls Royce", "Phantom",600);
+		myPhantom.showSpecs();
+		Vehicle.prototype.hasTrunk = true;
+		alert(myPhantom.hasTrunk);
+	}
+
+</script>
+</head>
+<body>
+	<h2>Prototype Example</h2>
+	<form>
+		<input type="button" value="Prototype Inheritance" onclick="proto()"/>
+	</form>
+</body>
+</html>

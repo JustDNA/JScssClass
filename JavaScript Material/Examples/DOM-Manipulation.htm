@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>DOM - Dynamic Content</title>
+<script language="javascript">
+
+var newPara, newText;
+
+function addNode()
+{
+    newPara = document.createElement("p");
+    newText = document.createTextNode("This is a new sentence");
+    newPara.appendChild(newText);
+    var bodyRef = document.getElementsByTagName("body");
+    bodyRef[0].appendChild(newPara);
+}
+
+function deleteNode()
+{
+    var paraRef = document.getElementById("para1");
+    var boldRef = document.getElementById("bold1");
+    var remNode = paraRef.removeChild(boldRef);
+    
+}
+function addAttribute()
+{
+    newPara.setAttribute("align","right");
+}
+function fetchAttribute()
+{
+    alert(newPara.getAttribute("align"));
+}
+function setStyle()
+{
+    var docBody = document.getElementsByTagName("body");
+    docBody[0].style.backgroundColor = "#AABBFF";
+}
+function frameChange () {
+    // document.getElementById("iframe1").src="http://www.wikipedia.org";
+    document.getElementById("iframe1").contentWindow.location.href="http://www.wikipedia.org";
+}
+</script>
+</head>
+
+<body>
+<h2>Dynamic Content with DOM</h2>
+<p id="para1">This example illustrates node manipulation using DOM!!!
+	<b id="bold1">Document Object Model Level 2</b>
+</p>
+<form>
+<p name="para"><input type="button" value="Add New Node" onclick="addNode()"></p>
+<p name="para"><input type="button" value="Delete Node" onclick="deleteNode()"></p>
+<p name="para"><input type="button" value="Add attribute" onclick="addAttribute()"></p>
+<p name="para"><input type="button" value="Fetch Attribute" onclick="fetchAttribute()"></p>
+<p name="para"><input type="button" value="Change Style" onclick="setStyle()"></p>
+<p name="para"><input type="button" value="Change Frame" onclick="frameChange()"></p>
+</form>
+
+<iframe src="http://www.apple.com" width="400" height="500" id="iframe1"></iframe>
+</body>
+
+</html>

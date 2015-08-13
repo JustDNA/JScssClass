@@ -1,0 +1,60 @@
+<HTML>
+	<HEAD>
+		<TITLE>Exception Handling Example 7</TITLE>
+		<Script language="JavaScript">
+		// throw an custom error
+		// handling the error using the "try-catch" block
+		// catch the error based on the ErrorType
+		// providing the error information
+		// with the finally block
+			function changeColours()
+			{
+					invalidValError = new Error("Value provided is not valid");
+					try
+					{
+						if (document.forms[0].txt1.value < 10)
+							throw invalidValError;
+					}
+					catch (e)
+					{
+						if (e instanceof TypeError)
+						{
+							alert("Type Error encountered. The description is " + e.message);
+						}
+						else if (e instanceof RangeError)
+						{
+							alert("Range Error encountered. Invalid value provided! ");
+						}
+						else
+						{
+							alert("Error encountered. The description is " + e.message);
+						}
+					}
+					finally
+					{
+						alert("Function completed");
+					}
+			}
+		</Script>
+	</HEAD>
+	<BODY>
+		<P>
+			<FONT size="5">Exception Handling Example 7</FONT>
+		</P>
+		<P>&nbsp;
+		</P>
+		<form id="form1" name="form1">
+		<div id="div1" style="LEFT: 10px; WIDTH: 100px; POSITION: relative; TOP: 10px; HEIGHT: 100px; BACKGROUND-COLOR: yellow">
+			This is the first DIV block!
+		</div>
+		<div id="div2" style="LEFT: 10px; WIDTH: 100px; POSITION: relative; TOP: 25px; HEIGHT: 100px; BACKGROUND-COLOR: aqua">
+			Enter a number greater than 10 : <input type="text" name="txt1" id="txt1" size="4">
+			
+		</div>
+		<br><br>
+			
+			<input type="button" name="btn1" value="Change Colours" onClick="changeColours()"><br>
+		</form>
+
+	</BODY>
+</HTML>

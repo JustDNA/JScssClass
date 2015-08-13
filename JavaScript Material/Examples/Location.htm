@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Location Object</title>
+<script language="javascript">
+
+
+function gotoURL()
+{
+    location.href="http://www.startrek.com"
+}
+function reloadPage()
+{
+   location.reload();
+}
+function portInfo()
+{
+   	alert(location.port);
+}
+</script>
+</head>
+
+<body>
+<h2>Examine characteristics of the Location Object</h2>
+<div id="mydiv"></div>
+<form>
+<p name="para"><input type="button" value="Star Trek" onclick="gotoURL()"></p>
+<p name="para"><input type="button" value="Reload Page" onclick="reloadPage()"></p>
+<p name="para"><input type="button" value="Port Info" onclick="portInfo()"></p>
+</form>
+<div name="para1"></div>
+</body>
+
+</html>
+

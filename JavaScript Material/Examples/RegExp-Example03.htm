@@ -1,0 +1,16 @@
+<script language="JavaScript">
+function checkpostal()
+{
+  var re5digit=/\d{1,4}/
+  if (document.myform.myinput.value.search(re5digit)==-1) 
+    alert("Please enter a number between 1 and 4 digits!")
+  else
+    alert("You've entered a valid number")
+}
+</script>
+
+<form name="myform">
+<input type="text" name="myinput" size=15>
+<input type="button" onClick="checkpostal()" value="check">
+
+</form>

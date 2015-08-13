@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Closure Example</title>
+<script>
+	function colorChanger(color) {
+		consolelog("Change color");
+	    return function() {
+	       document.body.style.backgroundColor=color;
+	   };
+	}
+
+	var redColor = colorChanger("#ff0000");
+	var greenColor = colorChanger("#00ff00");
+	var blueColor= colorChanger("#0000ff");
+</script>
+</head>
+<body>
+	<h2>Closure example</h2>
+	<a href="#" id="red" onclick="redColor()">Red</a>
+	<a href="#" id="green" onclick="greenColor()">Green</a>
+	<a href="#" id="blue" onclick="blueColor()">Blue</a>
+</body>
+</html>

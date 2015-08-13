@@ -1,0 +1,65 @@
+h2{
+	font-family: calibri;
+	font-size: 200%;
+}
+p.bold{
+	font-family: verdana;
+	font-weight: bold;
+	text-indent: 100px;
+}
+div>p{	/*if a para is immediate child of div; whereas, "div p" would apply to a p which is under a div at any level */
+	font-family: cambria;
+	text-decoration: line-through;
+}
+p.standard{
+	font-family: calibri;
+	font-weight: normal;
+}
+#footer{
+	font-family: courier;
+	text-align: center;
+	text-decoration: underline;
+}
+body{
+	background-image: url("https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xpa1/t31.0-8/p552x414/11141389_1049568971783869_6345652857829729509_o.jpg");
+	/* background-repeat: repeat-x; means repeat only on the x axis*/
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 120px 120px
+}
+img{
+	float: right;
+}
+ol{
+	list-style-type: lower-roman;
+}
+div:first-letter{
+	font-size: 26pt;
+	color: red;
+}
+div.type1{
+	left: 10px;
+	top: 10px;
+	width: 300px;
+	height: 300px;
+	background-color: green;
+	/*position: relative;*/
+	position: absolute;
+	z-index: 2;
+	border: 2px solid red;
+}
+div.type2{
+	left: 80px;
+	top: 80px;
+	width: 300px;
+	height: 300px;
+	background-color: yellow;
+	/*position: relative;*/
+	position: absolute;
+	z-index: 1;
+	border: 2px solid red;
+}
+/*
+li{
+	list-style-image: url("https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xpa1/t31.0-8/p552x414/11141389_1049568971783869_6345652857829729509_o.jpg");
+}*/

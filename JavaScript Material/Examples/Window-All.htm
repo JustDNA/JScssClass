@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Window Object</title>
+<script type="text/javascript">
+
+var count, timer;
+count =0;
+function open_win()
+{
+window.open("http://www.objectinet.com","_blank","toolbar=yes,location=no, directories=no, status=no, menubar=no, scrollbars=yes,resizable=no, copyhistory=yes, width=400, height=400")
+}
+function setStatus()
+{
+   window.status = "AOL Window"
+}
+function getName()
+{
+   	window.name = "myWindow";
+	alert(window.name);
+}
+function windowResize()
+{
+	window.resizeTo(500,500);
+}
+function startTimer()
+{
+	document.forms[0].elements["txtcounter"].value = count;
+	count = count + 1;
+	timer = window.setTimeout("startTimer()",1000);
+}
+function stopTimer()
+{
+	window.clearTimeout(timer);
+	count = 0;
+}
+</script>
+</head>
+
+<body>
+<h2>Examine characteristics of the Window Object</h2>
+<form>
+<p><input type="button" value="Set Status" onclick="setStatus()"></p>
+<p><input type="button" value="Window Name" onclick="getName()"></p>
+<p><input type="button" value="Resize Window" onclick="windowResize()"></p>
+<p><input type="button" value="Start Counter" onclick="startTimer()">&nbsp;&nbsp;<input type="button" value="Stop Counter" onclick="stopTimer()">&nbsp;&nbsp;<input type="text" name="txtcounter" value=""></p>
+</form>
+</body>
+
+</html>
+

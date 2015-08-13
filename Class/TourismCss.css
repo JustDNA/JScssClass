@@ -1,0 +1,30 @@
+h2{
+	text-align: center;
+}
+body{
+	font-family: calibri;
+}
+table#sec1{
+	background-color: lightgrey	;
+    width: 70%;
+    padding: 15px;
+    border: 5px solid navy;
+    margin: 25px;
+}
+table#sec2{
+	background-color: lightgreen	;
+    width: 70%;
+    padding: 15px;
+    border: 5px solid green;
+    margin: 25px;
+}
+#sec1 img{
+	border: 2px solid navy;
+}
+#sec2 img{
+	border: 2px solid green;
+}
+.bottom{
+	width: 100px;
+	height: 100px;
+}

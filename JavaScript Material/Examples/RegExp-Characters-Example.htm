@@ -1,0 +1,24 @@
+<script language="JavaScript">
+function checkString(){
+var pattern1 = /^(\w+[\-\.])*\w+@(\w+\.)+[A-Za-z]+$/;    //regular expression representing an email
+
+
+var regExp1 = new RegExp(pattern1);
+
+var myStr = document.myform.myinput.value;
+
+var strResults = regExp1.test(myStr);
+
+if (strResults)
+   alert("The email address entered in the text field meets the criterion!");
+else
+   alert("The email address entered is not in valid format!");
+
+}
+</script>
+
+<form name="myform">
+Email : <input type="text" name="myinput" size=25 value="@gmail.com">
+<input type="button" onClick="checkString()" value="check">
+
+</form>

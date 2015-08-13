@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>CreateObject Example</title>
+<Script language="JavaScript">
+var manager, executive;
+
+function employee(empid,empname,dept)
+{
+	this.empid = empid
+	this.empname = empname
+	this.dept = dept
+}
+function makeObject()
+{
+	manager = new employee('E101','Lakshman','Tech');
+	executive = new employee('E110','James','Pre-Sales');
+	alert("2 objects created");
+}
+function getData()
+{
+	alert("The manager's name is " + manager.empname);
+	alert("The executive's name is " + executive.empname);
+}
+</Script>
+</head>
+<body>
+<h2>Creating Objects using template approach</h2>
+<form>
+<p><input type="button" value="CreateObjects" onclick="makeObject()"></p>
+<p><input type="button" value="GetNames" onclick="getData()"></p>
+
+</form>
+</body>
+</html>

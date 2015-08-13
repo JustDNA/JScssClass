@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>
+Prototype Demo
+</title>
+<script language="JavaScript">
+	function writeCharCode()
+	{
+	   var tmpCode="";
+	   for(i=0;i<this.length;i++)
+	   {
+	      tmpCode += this.charAt(i) + "(" + this.charCodeAt(i) + ") ";
+	   }
+	    return(tmpCode);
+	}
+	String.prototype.charCode = writeCharCode;
+
+	function extExistingObj()
+	{
+		var myStr = new String("Hello World");
+		document.getElementById("strContents").innerHTML= myStr.charCode();
+	}
+
+</script>
+</head>
+<body>
+	<h2>Prototype Example</h2>
+	<div id="strContents"></div>
+	<form>
+		<input type="button" value="Extend existing Object" onclick="extExistingObj()"/>
+	</form>
+</body>
+</html>

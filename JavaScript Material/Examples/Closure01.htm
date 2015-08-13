@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Closure Example</title>
+<script>
+function User(name) {
+  this.say = function(phrase) {
+    alert(name + " says: " + phrase)
+  }
+}
+var user = new User("Lakshman")
+user.say("Hello");
+
+</script>
+</head>
+<body>
+<h2>Closure example</h2>
+</body>
+</html>

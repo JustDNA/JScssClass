@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Closure Example</title>
+<script>
+var getVal,incrementVal,setVal;
+function numbers() {
+  var num = 419;
+  getVal = function() { alert(num);}
+  incrementVal = function() {num++;}
+  setVal = function(tmpNum) { num = tmpNum;}
+}
+var getNum = numbers();
+getVal();
+incrementVal();
+getVal();
+setVal(100);
+getVal();
+
+</script>
+</head>
+<body>
+<h2>Closure example</h2>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<html>
+<head>
+	<title>OOP</title>
+	<script type="text/javascript">
+
+		function Shape (type) {
+			this.type = type;
+		}
+
+		function getType () {
+			return this.type;
+		}
+
+		function Triangle (a, b, c) {
+			this.a = a;
+			this.b = b;
+			this.c = c;
+			this.getPerimeter = function(){
+				return this.a + this.b + this.c;
+			}
+		}
+
+		function Circle (r) {
+			this.r = r;
+			this.getArea = function() {
+				return Math.PI * this.r * this.r;
+			}
+			this.getPerimeter = function(){
+				return 2.0*Math.PI*this.r;
+			}
+		}
+
+		function Rectangle (a, b) {
+			this.a = a;
+			if(typeof b !== "undefined"){
+				this.b = b;
+			}else{
+				this.b = a;
+				this.type = "Square";
+			}
+			this.getArea = function(){
+				return this.a*this.b;
+			}
+		}
+
+		function exec () {
+			Shape.prototype.getType = getType;
+			Triangle.prototype = new Shape("Triangle");
+			Circle.prototype = new Shape("Circle");
+			Rectangle.prototype = new Shape("Rectangle");
+			var t = new Triangle(3,2,5);
+			var c = new Circle(5);
+			var r = new Rectangle(5,10);
+			var r2 = new Rectangle(10);
+			alert(t.getPerimeter());
+			alert(t.getType());
+			alert(c.getPerimeter());
+			alert(c.getArea());
+			alert(c.getType());
+			alert(r.getArea());
+			alert(r.getType());
+			alert(r2.getArea());
+			alert(r2.getType());
+		}
+		exec();
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
